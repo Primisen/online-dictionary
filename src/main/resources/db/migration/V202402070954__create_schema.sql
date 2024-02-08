@@ -41,15 +41,25 @@ CREATE TABLE IF NOT EXISTS explanation
     FOREIGN KEY (dictionary_id) REFERENCES dictionary (id)
 );
 
+CREATE TABLE IF NOT EXISTS language
+(
+    id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
+    name               VARCHAR(36) NOT NULL,
+    created_date       TIMESTAMP DEFAULT current_timestamp,
+    last_modified_date TIMESTAMP DEFAULT NULL
+);
+
 CREATE TABLE IF NOT EXISTS word
 (
     id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
     category_id        UUID        NOT NULL,
     text               VARCHAR(50) NOT NULL,
     explanation_id     UUID      DEFAULT NULL,
+    language_id        UUID        NOT NULL,
     created_date       TIMESTAMP DEFAULT current_timestamp,
     last_modified_date TIMESTAMP DEFAULT NULL,
 
     FOREIGN KEY (category_id) REFERENCES category (id),
-    FOREIGN KEY (explanation_id) REFERENCES explanation (id)
+    FOREIGN KEY (explanation_id) REFERENCES explanation (id),
+    FOREIGN KEY (language_id) REFERENCES language (id)
 );

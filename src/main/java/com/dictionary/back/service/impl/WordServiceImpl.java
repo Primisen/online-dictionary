@@ -40,6 +40,7 @@ public class WordServiceImpl implements WordService {
         wordRepository.findById(id).ifPresentOrElse(foundWord -> {
             foundWord.setCategory(word.getCategory());
             foundWord.setText(word.getText());
+            foundWord.setLanguage(word.getLanguage());
             atomicReference.set(Optional.of(
                     wordRepository.save(foundWord)));
         }, () -> atomicReference.set(Optional.empty()));
