@@ -1,6 +1,6 @@
 package com.dictionary.back.repository;
 
-import com.dictionary.back.entity.dictionary.Author;
+import com.dictionary.back.entity.paper_dictionary.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.dictionary.back.service;
 
-import com.dictionary.back.entity.dictionary.Dictionary;
+import com.dictionary.back.entity.paper_dictionary.Dictionary;
 
 import java.util.List;
 import java.util.Optional;

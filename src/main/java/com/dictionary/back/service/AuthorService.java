@@ -1,6 +1,6 @@
 package com.dictionary.back.service;
 
-import com.dictionary.back.entity.dictionary.Author;
+import com.dictionary.back.entity.paper_dictionary.Author;
 
 import java.util.List;
 import java.util.Optional;

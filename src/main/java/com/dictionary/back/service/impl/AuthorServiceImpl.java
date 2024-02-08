@@ -1,6 +1,6 @@
 package com.dictionary.back.service.impl;
 
-import com.dictionary.back.entity.dictionary.Author;
+import com.dictionary.back.entity.paper_dictionary.Author;
 import com.dictionary.back.repository.AuthorRepository;
 import com.dictionary.back.service.AuthorService;
 import lombok.RequiredArgsConstructor;

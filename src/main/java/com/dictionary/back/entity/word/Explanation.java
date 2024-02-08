@@ -1,6 +1,6 @@
 package com.dictionary.back.entity.word;
 
-import com.dictionary.back.entity.dictionary.Dictionary;
+import com.dictionary.back.entity.paper_dictionary.Dictionary;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,6 +1,6 @@
 package com.dictionary.back.controller;
 
-import com.dictionary.back.entity.dictionary.Dictionary;
+import com.dictionary.back.entity.paper_dictionary.Dictionary;
 import com.dictionary.back.exception.NotFoundException;
 import com.dictionary.back.service.DictionaryService;
 import lombok.RequiredArgsConstructor;

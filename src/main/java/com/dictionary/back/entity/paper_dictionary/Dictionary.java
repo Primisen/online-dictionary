@@ -1,4 +1,4 @@
-package com.dictionary.back.entity.dictionary;
+package com.dictionary.back.entity.paper_dictionary;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
