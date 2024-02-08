@@ -63,3 +63,15 @@ CREATE TABLE IF NOT EXISTS word
     FOREIGN KEY (explanation_id) REFERENCES explanation (id),
     FOREIGN KEY (language_id) REFERENCES language (id)
 );
+
+CREATE TABLE IF NOT EXISTS bel_ru_online_dictionary
+(
+    id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
+    bel_id             UUID NOT NULL,
+    ru_id              UUID NOT NULL,
+    created_date       TIMESTAMP DEFAULT current_timestamp,
+    last_modified_date TIMESTAMP DEFAULT NULL,
+
+    FOREIGN KEY (bel_id) REFERENCES word (id),
+    FOREIGN KEY (ru_id) REFERENCES word (id)
+);
