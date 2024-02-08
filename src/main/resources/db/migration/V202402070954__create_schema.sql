@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS dictionary
 (
-    id                 UUID PRIMARY KEY,
+    id                 UUID         DEFAULT gen_random_uuid() PRIMARY KEY,
     name               VARCHAR(36) NOT NULL,
     year               VARCHAR(4)   DEFAULT NULL,
     description        VARCHAR(255) DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS dictionary
 
 CREATE TABLE IF NOT EXISTS author
 (
-    id                 UUID PRIMARY KEY,
+    id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
     name               VARCHAR(36) NOT NULL,
     surname            VARCHAR(36) NOT NULL,
     created_date       TIMESTAMP   NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS author
 
 CREATE TABLE IF NOT EXISTS category
 (
-    id                 UUID PRIMARY KEY,
+    id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
     name               VARCHAR(36) NOT NULL,
     created_date       TIMESTAMP   NOT NULL,
     last_modified_date TIMESTAMP DEFAULT NULL
@@ -32,7 +32,7 @@ VALUES ('Literal', current_timestamp),
 
 CREATE TABLE IF NOT EXISTS explanation
 (
-    id                 UUID PRIMARY KEY,
+    id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
     dictionary_id      UUID      DEFAULT NULL,
     text               VARCHAR(255) NOT NULL,
     created_date       TIMESTAMP    NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS explanation
 
 CREATE TABLE IF NOT EXISTS word
 (
-    id                 UUID PRIMARY KEY,
+    id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,
     category_id        UUID        NOT NULL,
     text               VARCHAR(50) NOT NULL,
     explanation_id     UUID      DEFAULT NULL,
