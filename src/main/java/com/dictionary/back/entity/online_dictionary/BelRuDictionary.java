@@ -1,6 +1,7 @@
 package com.dictionary.back.entity.online_dictionary;
 
 import com.dictionary.back.entity.word.Word;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,10 +35,10 @@ public class BelRuDictionary {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Word bel;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Word ru;
 
     @CreationTimestamp
