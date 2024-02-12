@@ -17,6 +17,15 @@ CREATE TABLE IF NOT EXISTS author
     last_modified_date TIMESTAMP DEFAULT NULL
 );
 
+CREATE TABLE IF NOT EXISTS dictionary_author
+(
+    dictionary_id UUID NOT NULL,
+    author_id UUID NOT NULL,
+
+    FOREIGN KEY (dictionary_id) REFERENCES dictionary(id),
+    FOREIGN KEY (author_id) REFERENCES author(id)
+);
+
 CREATE TABLE IF NOT EXISTS category
 (
     id                 UUID      DEFAULT gen_random_uuid() PRIMARY KEY,

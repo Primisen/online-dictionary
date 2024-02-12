@@ -5,9 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -19,7 +16,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -38,12 +34,6 @@ public class Author {
 
     private String name;
     private String surname;
-
-    @ManyToMany
-    @JoinTable(name = "dictionary_author",
-            joinColumns = @JoinColumn(name = "author_id"),
-            inverseJoinColumns = @JoinColumn(name = "dictionary_id"))
-    private Set<Dictionary> dictionaries;
 
     @CreationTimestamp
     @Column(updatable = false)
